@@ -1,0 +1,19 @@
+{
+  "name": "Communication POC",
+  "version": "1.0",
+  "description": "Communication POC Description",
+  "manifest_version": 3,
+  "author": "Nathan Krasney",
+  "action": {
+    "default_icon": "default_icon.png",
+    "default_popup": "popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://www.ynet.co.il/*"
+      ]
+    }
+  ]
+}

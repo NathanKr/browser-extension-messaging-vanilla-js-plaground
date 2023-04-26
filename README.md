@@ -1,1 +1,2 @@
-# browser-extension-messaging-vanilla-js-plaground
+<h2>Motivation</h2>
+Experiment messaging between popup and content script
