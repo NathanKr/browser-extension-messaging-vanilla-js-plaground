@@ -33,9 +33,13 @@ document.querySelector("#app").innerHTML = `
 `;
 
 function sendMessageToContentScript() {
-  console.log(`message : ${MESSAGE_HI_CONTENT}`);
+  const msgObj = {
+    action: MESSAGE_HI_CONTENT,
+    payload: { foo: 1, baz: "hello" }
+  };
   // --- use tabs for content
-  chrome.tabs.sendMessage(tabId, MESSAGE_HI_CONTENT, null, (response) => {
+  chrome.tabs.sendMessage(tabId, msgObj, null, (response) => {
+    console.log(response);
     console.log(response?.message);
     document.getElementById(
       MESSAGES_FROM_CONTENT_SCRIPT_ID
@@ -44,11 +48,13 @@ function sendMessageToContentScript() {
   });
 }
 
-function sendMessageToBackground(){
+function sendMessageToBackground() {
   const extensionId = null;
-  console.log(`message : ${MESSAGE_HI_BACKGROUND}`);
+  const msgObj = { action: MESSAGE_HI_BACKGROUND , payload: { foo1: 1, baz1: "hello" }};
+
   // --- use runtime for non content
-  chrome.runtime.sendMessage(extensionId, MESSAGE_HI_BACKGROUND, null, (response) => {
+  chrome.runtime.sendMessage(extensionId, msgObj, null, (response) => {
+    console.log(response);
     console.log(response?.message);
     document.getElementById(
       MESSAGES_FROM_BACKGROUND_ID

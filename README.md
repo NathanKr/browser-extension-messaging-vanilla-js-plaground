@@ -73,3 +73,9 @@ The callback parameter looks like:
 (message: any, sender: MessageSender, sendResponse: function) => boolean | undefined 
 
 ```
+
+
+<h2>Points of interest</h2>
+<ul>
+<li>the message in sendMessage is used here as object with two attributes : action and payload</li>
+</ul>
