@@ -10,7 +10,8 @@ Experiment with <a href='https://developer.chrome.com/docs/extensions/mv2/messag
 
 
 <h2>API</h2>
-<h3><a href='https://developer.chrome.com/docs/extensions/reference/tabs/#method-sendMessage'>send message from popup to content script</a></h3>
+<h3><a href='https://developer.chrome.com/docs/extensions/reference/tabs/#method-sendMessage'>send message from popup to content</a></h3>
+
 
 ```javascript
 
@@ -31,6 +32,29 @@ The callback parameter looks like:
  (response: any) => void 
 
 ```
+
+
+<h3><a href='https://developer.chrome.com/docs/extensions/reference/runtime/#method-sendMessage'>send message from popup to background</a></h3>
+
+```javascript
+
+chrome.runtime.sendMessage(
+  extensionId?: string,
+  message: any,
+  options?: object,
+  callback?: function,
+) 
+
+```
+
+The callback parameter looks like:
+
+```javascript
+
+ (response: any) => void 
+
+```
+
 
 <h3><a href='https://developer.chrome.com/docs/extensions/reference/runtime/#event-onMessage'>recive message</a></h3>
 
